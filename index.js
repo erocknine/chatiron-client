@@ -1,31 +1,17 @@
 const BASE_URL = "http://dbdea2b7.ngrok.io"
-document.querySelector("#new-message-form").addEventListener("submit", e => {
-  e.preventDefault()
-  const message = {
-    username: e.target.username.value,
-    text: e.target.text.value,
-  }
 
-  fetch(BASE_URL + "/messages", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(message)
-  })
-    .then(r => r.json())
-    .then(renderMessage)
-})
+// Deliverable 1: read messages
 
+// Deliverable 2: create message
 
+// Use this helper function to render the messages!
 function renderMessage(message) {
-  console.log(message)
   const messageLi = document.createElement("li")
   messageLi.className = "message"
 
-  const userSpan = document.createElement("span")
+  const userSpan = document.createElement("strong")
   userSpan.className = "user"
-  userSpan.textContent = message.username
+  userSpan.textContent = `${message.username}: `
 
   const textSpan = document.createElement("span")
   textSpan.className = "text"
