@@ -2,7 +2,14 @@
 
 Write your code in the index.js file, you won't need to modify the sockets.js file for this to work!
 
-## Initial Fetch
+## Setup
+All the setup is done for you! Use the `BASE_URL` variable to compose your url for the fetch requests. For example:
+
+```js
+fetch(BASE_URL + "/some_endpoint")
+```
+
+## Read Messages
 When the page loads, make a `fetch` request to get all the messages:
 
 ```
@@ -11,7 +18,7 @@ GET /messages
 
 Use the `renderMessage` helper to add the messages to the page!
 
-## Sending a message
+## Create a message
 When the `#new-message-form` is submitted, make a `fetch` request to send a message:
 
 ```
